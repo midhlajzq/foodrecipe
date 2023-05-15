@@ -1,0 +1,18 @@
+.banner{
+    background-image: url(https://www.maggi.co.uk/sites/default/files/styles/maggi_desktop_image_style/public/NUK1265%20maggi%20Recipes%20banner%201500x700px%20opt2A.jpg?h=4f5b30f1&itok=DcsF1RwA);
+
+    background-size: 100% 380px;
+    background-attachment: fixed;
+    margin-top: 2px;
+    color: rgb(22, 216, 138);
+   
+
+}
+.atag{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+   
+}
+.card-bg{
+    background-color: #b3a2ce;
+}

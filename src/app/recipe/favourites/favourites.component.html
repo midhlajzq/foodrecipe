@@ -1,0 +1,43 @@
+
+<!-- empty wishlist -->
+<div *ngIf="favourites.length==0" class="container mt-5">
+    <div class="row mt-5">
+        <div class="col text-center mt-5">
+            <img height="300px" src="https://gifdb.com/images/high/shocked-cat-flying-empty-wallet-4qwu4f46jyk74gip.gif">
+            <h3 class="text-light mt-3">Your Favourites is Empty!!!</h3>
+            <a class="btn btn-success" routerLink="">Add Something</a>
+        </div>
+    </div>
+</div>
+<!-- wishlist design with item  -->
+<section class="py-5">
+    <div *ngIf="favourites.length!=0" class="container px-2 px-lg-2 mt-3">
+        <h2 class="text-danger fw-bolder ms-2 mb-5">Your Favourites</h2>
+    
+        <div class="container  px-4 px-lg-5 mt-5">
+    
+       
+                <div class="row  gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div *ngFor="let favourite of favourites | filter : searchKey :'name'" class="col mb-5 ">
+                        <div class="card h-100 p-3">
+                            <!-- Product image-->
+                           <a routerLink="favourite-view/{{favourite.id}}"> <img height="200px" class="card-img-top" [src]="favourite.image" [alt]="favourite" /></a>
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder"><a class="atag" routerLink="favourite-view/{{favourite.id}}">{{favourite.name.slice(0,20)}}..</a></h5>
+                                    <!-- Product price-->
+                                   
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <button (click)="removeItem(favourite.id)" class="btn btn-dark"><i style="color: rgb(155, 107, 107);" class="fa-solid fa-trash fa-flip"></i><span style="color: #7843cd;"> Remove</span></button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+    </div>
+   
+</section>

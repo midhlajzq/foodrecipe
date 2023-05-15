@@ -1,0 +1,43 @@
+<!-- header -->
+<header class="banner py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-1">
+            <h1 class="display-4 fw-bolder">Make Your Favourite Foods</h1>
+            <p class="lead fw-bolder text-dark-50 mb-0">With ZQ Recipes</p>
+        </div>
+    </div>
+</header>
+<!-- section -->
+<section class="py-5">
+    <div  class="container px-4 px-lg-5 mt-5">
+        <div  class="row  gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div *ngFor="let recipe of allrecipes | filter : searchKey :'name'" class="col mb-5 " >
+                <div class="card-bg card h-100 p-3">
+                    <!-- Product image-->
+                   <a routerLink="view-recipe/{{recipe.id}}"> <img style="height: 200px;" class="card-img-top" [src]="recipe.image" alt="" /></a>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                           <a class="atag" routerLink="view-recipe/{{recipe.id}}"> <h5 class="fw-bolder">{{ recipe.name.slice(0,20)}}...</h5></a>
+                            <!-- Product price-->
+                           
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <!-- <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="d-flex justify-content-evenly">
+                            view button
+                            <a class="btn btn-warning mt-auto" routerLink=""><i class="fa-solid fa-eye text-light"></i></a>
+                         
+
+                            
+                        </div>
+                           
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        </div>
+
+</section>
